@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untitled Document</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <link href="css/command.css" rel="stylesheet">
+  <!-- JavaScript -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    $('#v-pills-home-tab').click(function () {
+      $('#v-pills-profile-tab').removeClass('active');
+      $('#v-pills-profile').removeClass('show active');
+
+      $('#v-pills-home-tab').addClass('active');
+      $('#v-pills-home').addClass('show active');
+    })
+
+    $('#v-pills-profile-tab').click(function () {
+      $('#v-pills-home-tab').removeClass('active');
+      $('#v-pills-home').removeClass('show active');
+
+      $('#v-pills-profile-tab').addClass('active');
+      $('#v-pills-profile').addClass('show active');
+    })
+
+  </script>
+</head>
+
+<body>
+  <!--header-->
+  <div class="page_1">
+    <div class="container-fluid " id="bgheader">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 headertitle">
+            <h1>Đăng ký đồ án nhóm</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--content-->
+    <div class="container-fluid" id="contbg">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-3" id="v-pills-tabContent">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="index.html" role="tab"
+                aria-controls="v-pills-home" aria-selected="true">Thêm nhóm</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="dsn.html" role="tab"
+                aria-controls="v-pills-profile" aria-selected="false">Danh sách nhóm</a>
+            </div>
+
+          </div>
+          <div class="col-xl-9" id="contbox">
+            <form>
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Tên đồ án</label>
+                <div class="col-sm-8 offset-sm-1">
+                  <input type="text" onChange="handleNameChange()" class="form-control prj-name" id="inputtext"
+                    placeholder=" Trang web bán hàng ABC">
+                </div>
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-3 pt-0">Loại đồ án</legend>
+                  <div class="col-sm-8 offset-sm-1">
+                    <div class="form-check">
+                      <input class="form-check-input " onChange="handleTypeChange()" type="radio" name="gridRadios"
+                        id="gridRadios1" value="App" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        App
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" onChange="handleTypeChange()" type="radio" name="gridRadios"
+                        id="gridRadios2" value="Web">
+                      <label class="form-check-label" for="gridRadios2">
+                        Web
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="row mb-3">
+                <div class="col-xl-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Mô tả đồ án</label>
+                </div>
+                <div class="col-xl-8 offset-xl-1">
+                  <textarea class="form-control value-descrip" onChange="handleDescripChange()"
+                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="list_add_member">
+                <div class="row">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label">Danh sách thành viên</label>
+                  <div class="col-xl-9">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 offset-sm-2 col-form-label">MSSV</label>
+                      <div class="col-sm-4 mssv">
+                        <input type="text" onChange="handleMssvChange()" name="mssv" class="form-control" id="mssv"
+                          placeholder=" 13520668">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row ">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
+                  <div class="col-xl-9">
+                    <div class="form-group row">
+                      <label for="inputEmail3" onChange="handleNameMemberChange()" name="hvt"
+                        class="col-sm-2 offset-sm-2 col-form-label">Họ và tên</label>
+                      <div class="col-sm-4 mssv">
+                        <input type="text" onChange="handleNameMemberChange()" name="hvt" class="form-control"
+                          id="hovaten" placeholder="Võ Minh Quân">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row ">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
+                  <div class="col-xl-9">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 offset-sm-2 col-form-label">MSSV</label>
+                      <div class="col-sm-4 mssv">
+                        <input type="text" onChange="handleMssvChange()" name="mssv" class="form-control" id="mssv2"
+                          placeholder="123123">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row ">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
+                  <div class="col-xl-9">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 offset-sm-2 col-form-label">Họ và tên</label>
+                      <div class="col-sm-4 mssv">
+                        <input type="text" onChange="handleNameMemberChange()" name="hvt" class="form-control"
+                          id="hovaten2" placeholder="Nguyễn Văn A">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div>
+                <button class="btn btn-link btn-block text-left col-sm-3 offset-sm-2 col-form-label add-member "
+                  type="button">Thêm
+                  thành viên</button>
+                <button type="button" class="btn btn-primary offset-sm-7" onclick="AddProject()">Đăng ký</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--dsn-->
+    <!--header-->
+    <div class="page_2">
+      <div class="container-fluid" id="bgheader">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 headertitle">
+              <h1>Đăng kí đồ án nhóm</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--content-->
+      <div class="container d-flex">
+
+
+        <table class="table col-xl-21">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tên đồ án</th>
+              <th scope="col">Loại đô án</th>
+              <th scope="col">Danh sách thành viên</th>
+              <th scope="col">Mô tả</th>
+            </tr>
+          </thead>
+          <tbody class="list_project">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>tin</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--dsn-->
+    <script src="js/index.js"></script>
+    <script scr="js/dsn.js"></script>
+</body>
+
+</html>
