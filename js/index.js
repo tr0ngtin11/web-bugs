@@ -34,7 +34,7 @@ function handleClickAddMem() {
 btn_add_mem.addEventListener("click", handleClickAddMem);
 
 
-var i = 0;
+var i = 1;
 
 function AddProject() {
   let name_prj = document.querySelector('.prj-name').value;
@@ -46,10 +46,10 @@ function AddProject() {
   let array_MSSV = [...objarray_MSSV];
   let dssv = array_MSSV.map((e) => e.value);
   let minimize_des = minimizeString(descrip_prj);
-
+  let stt = i.toString();
   let new_prj =
     `<tr>
-    <th scope="row "></th>
+    <th scope="row ">${stt}</th>
     <td>${name_prj}</td>
     <td>${type_prj}</td>
     <td>
@@ -57,7 +57,7 @@ function AddProject() {
     </td>
     <td>${minimize_des}</td>
   </tr>`;
-
+  i++;
   let list_prj = document.querySelector('.list_project');
   list_prj.insertAdjacentHTML('beforeend', new_prj);
   prj_exist.className = "nav-link";
