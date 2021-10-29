@@ -34,62 +34,6 @@ function handleClickAddMem() {
 btn_add_mem.addEventListener("click", handleClickAddMem);
 
 
-// List Project
-// let list_prj = document.querySelector('.list_project');
-// let first_e_prj = document.querySelector('.first_e');
-// if (first_e_prj === null) {
-//   list_prj.innerHTML = '';
-// }
-
-// let page_1 = document.querySelector('.page_1')
-
-// let page_2 = document.querySelector('.page_2')
-// let act_nav_1 = document.querySelectorAll('.nav-link')[0];
-// let act_nav_2 = document.querySelectorAll('.nav-link')[1];
-
-// console.log(act_nav.ariaSelected);
-// if (act_nav_1.ariaSelected) {
-//   act_nav_2.ariaSelected = false
-//   page_2.innerHTML = '';
-// }
-// else {
-//   act_nav_2.ariaSelected = true;
-//   act_nav_1.ariaSelected = false
-//   page_1.innerHTML = '';
-// }
-
-
-// Get value form 
-
-
-
-function handleNameChange() {
-  let name_prj = document.querySelector('.prj-name').value;
-
-
-}
-
-function handleTypeChange() {
-  var type_prj = document.querySelector('input[name="gridRadios"]:checked').value;
-  console.log(type_prj);
-}
-
-function handleDescripChange() {
-  var descrip_prj = document.querySelector('.value-descrip').value;
-  console.log(descrip_prj);
-}
-
-
-function handleMssvChange() {
-  var array_MSSV = document.querySelectorAll('input[name="mssv"]');
-  console.log(array_MSSV[0].value);
-}
-
-function handleNameMemberChange() {
-  var array_Name_Member = document.querySelectorAll('input[name="hvt"]');
-  // console.log(array_Name_Member[0].value);
-}
-
 var i = 0;
 
 function AddProject() {
@@ -98,22 +42,60 @@ function AddProject() {
   var descrip_prj = document.querySelector('.value-descrip').value;
   var objarray_MSSV = document.querySelectorAll('input[name="mssv"]');
   var array_Name_Member = document.querySelectorAll('input[name="hvt"]');
+  let prj_exist = document.querySelector('.unshow');
   let array_MSSV = [...objarray_MSSV];
-  let dssv = array_MSSV.map((e) => e.value)
-  console.log(dssv.join(' '));
+  let dssv = array_MSSV.map((e) => e.value);
+  let minimize_des = minimizeString(descrip_prj);
+
   let new_prj =
     `<tr>
-    <th scope="row"></th>
+    <th scope="row "></th>
     <td>${name_prj}</td>
     <td>${type_prj}</td>
     <td>
     ${dssv.join(`<br>`)}
     </td>
-    <td>${descrip_prj}</td>
+    <td>${minimize_des}</td>
   </tr>`;
 
   let list_prj = document.querySelector('.list_project');
   list_prj.insertAdjacentHTML('beforeend', new_prj);
-
+  prj_exist.className = "nav-link";
 
 }
+
+
+function minimizeString(string) {
+  console.log(string.length)
+  let count = 0;
+  let flag = false;
+  let pos = -1;
+  for (let j = 0; ; j++) {
+    if (string[j] == ' ') {
+      count++;
+    }
+    if (count == 10) {
+      pos = j;
+      flag = true;
+    }
+    if (string[j] == undefined) {
+      break;
+    }
+
+  }
+
+
+
+  if (flag == true) {
+    string = string.substring(0, pos) + '...';
+  }
+  return string;
+}
+
+
+
+
+
+
+
+
