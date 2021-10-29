@@ -74,7 +74,7 @@ function minimizeString(string) {
     if (string[j] == ' ') {
       count++;
     }
-    if (count == 10) {
+    if (count == 9) {
       pos = j;
       flag = true;
     }
@@ -87,7 +87,7 @@ function minimizeString(string) {
 
 
   if (flag == true) {
-    string = string.substring(0, pos) + '...';
+    string = string.substring(0, pos + 1) + '...';
   }
   return string;
 }
