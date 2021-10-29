@@ -44,6 +44,7 @@ function AddProject() {
   var array_Name_Member = document.querySelectorAll('input[name="hvt"]');
   let prj_exist = document.querySelector('.unshow');
   let array_MSSV = [...objarray_MSSV];
+  let name_lead = [...array_Name_Member];
   let dssv = array_MSSV.map((e) => e.value);
   let minimize_des = minimizeString(descrip_prj);
   let stt = i.toString();
@@ -52,6 +53,7 @@ function AddProject() {
     <th scope="row ">${stt}</th>
     <td>${name_prj}</td>
     <td>${type_prj}</td>
+    <td>${array_MSSV[0].value} - ${name_lead[0].value}</td>
     <td>
     ${dssv.join(`<br>`)}
     </td>
