@@ -1,0 +1,11 @@
+.border-top-ip {
+    box-sizing: padding-box;
+    border-top: 1px solid #dee2e6 !important;
+}
+
+.mt {
+    margin-top: 15px;
+}
+.ml {
+    margin-left: 250px;
+}

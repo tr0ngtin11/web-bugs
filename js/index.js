@@ -10,9 +10,9 @@ function handleClickAddMem() {
       <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
       <div class="col-xl-9">
         <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 offset-sm-2 col-form-label">MSSV</label>
-          <div class="col-sm-4 mssv">
-            <input type="text" onChange="handleMssvChange()" name="mssv" class="form-control" id="mssv2" placeholder="123123">
+          <label for="inputEmail3" class="col-sm-2 offset-sm-2 col-form-label border-top pt-3">MSSV</label>
+          <div class="col-sm-4 mssv border-top">
+            <input type="text" onChange="handleMssvChange()" name="mssv" class="form-control mt" id="mssv2" placeholder="123123">
           </div>
         </div>
       </div>
@@ -21,9 +21,9 @@ function handleClickAddMem() {
       <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
       <div class="col-xl-9">
         <div class="form-group row">
-          <label for="inputEmail3" onChange="handleNameMemberChange()" name="hvt" class="col-sm-2 offset-sm-2 col-form-label">Họ và tên</label>
-          <div class="col-sm-4 mssv">
-            <input type="text" class="form-control" id="hovaten2" placeholder="Nguyễn Văn A">
+          <label for="inputEmail3" onChange="handleNameMemberChange()" name="hvt" class="col-sm-2 offset-sm-2 col-form-label border-top pt-3">Họ và tên</label>
+          <div class="col-sm-4 mssv border-top">
+            <input type="text" class="form-control mt" id="hovaten2" placeholder="Nguyễn Văn A">
           </div>
         </div>
       </div>
